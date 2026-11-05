@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lingo – Language Translator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <p class="brand">Lingo</p>
+      <p class="hello" id="hello" aria-hidden="true">Hello</p>
+      <h1>Translate anything,<br>in any language.</h1>
+    </header>
+
+    <section class="card" aria-label="Translator">
+
+      <div class="langs">
+        <label class="chip">
+          <span>From</span>
+          <select id="source"></select>
+        </label>
+
+        <button class="swap" id="swap" type="button" aria-label="Swap languages" title="Swap languages">⇄</button>
+
+        <label class="chip">
+          <span>To</span>
+          <select id="target"></select>
+        </label>
+      </div>
+
+      <div class="panes">
+        <div class="pane">
+          <label class="sr" for="input">Text to translate</label>
+          <textarea id="input" maxlength="500" placeholder="Type or paste your text here…"></textarea>
+          <div class="row">
+            <span class="meta" id="count">0 / 500</span>
+            <div class="actions">
+              <button type="button" class="ghost" id="clear">Clear</button>
+              <button type="button" class="ghost" id="speakIn" aria-label="Listen to input">🔊</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane result">
+          <div id="output" class="output placeholder" aria-live="polite">Your translation shows up here.</div>
+          <div class="row">
+            <span class="meta" id="detected"></span>
+            <div class="actions">
+              <button type="button" class="ghost" id="copy" disabled>Copy</button>
+              <button type="button" class="ghost" id="speakOut" aria-label="Listen to translation" disabled>🔊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="primary" id="translate" type="button">Translate</button>
+      <p class="status" id="status" role="status"></p>
+    </section>
+
+    <footer class="foot">Tip: press Ctrl + Enter to translate.</footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
