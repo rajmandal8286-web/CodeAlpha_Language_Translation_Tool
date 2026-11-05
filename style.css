@@ -1,12 +1,12 @@
-/* ---------- Design tokens ---------- */
+
 :root {
-  --bg: #eceeff;        /* soft lavender page */
-  --ink: #14123a;       /* deep indigo text */
-  --violet: #5b3df5;    /* primary */
+  --bg: #eceeff;        
+  --ink: #14123a;       
+  --violet: #5b3df5;   
   --violet-dark: #4528d8;
-  --coral: #ff6b9d;     /* single accent */
+  --coral: #ff6b9d;     
   --card: #ffffff;
-  --soft: #f4f5ff;      /* input surface */
+  --soft: #f4f5ff;     
   --muted: #6c6a8f;
   --line: #dcdefa;
   --radius: 22px;
@@ -38,7 +38,7 @@ body {
   clip: rect(0 0 0 0);
 }
 
-/* ---------- Hero ---------- */
+
 .hero { margin-bottom: 28px; }
 
 .brand {
@@ -53,7 +53,7 @@ body {
   font-size: 1rem;
 }
 
-/* The one bold moment: a huge greeting that changes language */
+
 .hello {
   margin: 0;
   font-family: var(--display);
@@ -190,7 +190,7 @@ textarea {
 .ghost:hover:not(:disabled) { background: rgba(91, 61, 245, .1); }
 .ghost:disabled { color: var(--muted); opacity: .5; cursor: not-allowed; }
 
-/* ---------- Main button ---------- */
+
 .primary {
   display: block;
   width: 100%;
@@ -213,7 +213,7 @@ textarea {
 
 .foot { margin-top: 18px; text-align: center; font-size: .85rem; color: var(--muted); }
 
-/* ---------- Accessibility & responsive ---------- */
+
 :focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
 
 @media (max-width: 680px) {

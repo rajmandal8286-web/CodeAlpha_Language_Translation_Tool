@@ -1,7 +1,3 @@
-/* ===== Lingo – Language Translator =====
-   Uses the free MyMemory Translation API (no key needed, ~500 characters per request).
-   To use Google Translate or Microsoft Translator instead, replace the
-   translateText() function near the bottom – the rest of the app stays the same. */
 
 const LANGS = [
   { code: "en", name: "English",              voice: "en-US" },
@@ -32,7 +28,7 @@ const statusEl = $("status"), translateBtn = $("translate");
 let translated = "";
 let translatedLang = "hi";
 
-/* ---------- Setup ---------- */
+
 sourceEl.innerHTML =
   '<option value="auto">Detect language</option>' +
   LANGS.map((l) => `<option value="${l.code}">${l.name}</option>`).join("");
@@ -42,18 +38,18 @@ targetEl.value = "hi";
 
 const findLang = (code) => LANGS.find((l) => l.code === code);
 
-/* ---------- Greeting animation (changes every 2.2s) ---------- */
+
 let g = 0;
 const helloEl = $("hello");
 setInterval(() => {
   g = (g + 1) % GREETINGS.length;
   helloEl.textContent = GREETINGS[g];
   helloEl.classList.remove("swap-in");
-  void helloEl.offsetWidth;            // restart the animation
+  void helloEl.offsetWidth;            
   helloEl.classList.add("swap-in");
 }, 2200);
 
-/* ---------- UI helpers ---------- */
+
 function setStatus(text, isError = false) {
   statusEl.textContent = text;
   statusEl.classList.toggle("error", isError);
@@ -95,7 +91,7 @@ $("swap").addEventListener("click", () => {
   }
 });
 
-/* ---------- Copy & text-to-speech ---------- */
+
 $("copy").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(translated);
@@ -145,7 +141,7 @@ translateBtn.addEventListener("click", async () => {
   }
 });
 
-/* ---------- API call (swap this function to change provider) ---------- */
+/* ---------- API call  ---------- */
 async function translateText(text, from, to) {
   const apiCode = (c) => (findLang(c) || {}).api || c;
   const pair = `${from === "auto" ? "Autodetect" : apiCode(from)}|${apiCode(to)}`;
@@ -164,15 +160,4 @@ async function translateText(text, from, to) {
   return { text: data.responseData.translatedText, detected };
 }
 
-/* Google Cloud Translation v2 version (use a backend to keep your key private):
 
-async function translateText(text, from, to) {
-  const res = await fetch("https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ q: text, target: to, format: "text", ...(from !== "auto" && { source: from }) })
-  });
-  const t = (await res.json()).data.translations[0];
-  return { text: t.translatedText, detected: t.detectedSourceLanguage || "" };
-}
-*/
