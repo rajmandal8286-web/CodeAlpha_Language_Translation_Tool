@@ -1,12 +1,11 @@
-
 :root {
-  --bg: #eceeff;        
-  --ink: #14123a;       
-  --violet: #5b3df5;   
+  --bg: #eceeff;
+  --ink: #14123a;
+  --violet: #5b3df5;
   --violet-dark: #4528d8;
-  --coral: #ff6b9d;     
+  --coral: #ff6b9d;
   --card: #ffffff;
-  --soft: #f4f5ff;     
+  --soft: #f4f5ff;
   --muted: #6c6a8f;
   --line: #dcdefa;
   --radius: 22px;
@@ -38,7 +37,6 @@ body {
   clip: rect(0 0 0 0);
 }
 
-
 .hero { margin-bottom: 28px; }
 
 .brand {
@@ -52,7 +50,6 @@ body {
   font-weight: 800;
   font-size: 1rem;
 }
-
 
 .hello {
   margin: 0;
@@ -79,7 +76,6 @@ h1 {
   color: var(--ink);
 }
 
-/* ---------- Card ---------- */
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -131,7 +127,6 @@ select {
 }
 .swap:hover { transform: rotate(180deg); }
 
-/* ---------- Text panes ---------- */
 .panes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -190,7 +185,6 @@ textarea {
 .ghost:hover:not(:disabled) { background: rgba(91, 61, 245, .1); }
 .ghost:disabled { color: var(--muted); opacity: .5; cursor: not-allowed; }
 
-
 .primary {
   display: block;
   width: 100%;
@@ -211,8 +205,78 @@ textarea {
 .status { min-height: 1.4em; margin: 10px 0 0; font-size: .92rem; color: var(--muted); }
 .status.error { color: #c2255c; font-weight: 500; }
 
-.foot { margin-top: 18px; text-align: center; font-size: .85rem; color: var(--muted); }
+.history-panel {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
 
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.history-header h2 {
+  margin: 0;
+  font: 800 1rem var(--display);
+  color: var(--ink);
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.history-item {
+  background: var(--soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.history-button {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 12px;
+  font: 500 .95rem var(--body);
+  cursor: pointer;
+}
+
+.history-button:hover {
+  background: rgba(91, 61, 245, .04);
+}
+
+.history-pair {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.history-text {
+  display: block;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-empty {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.foot { margin-top: 18px; text-align: center; font-size: .85rem; color: var(--muted); }
 
 :focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
 
