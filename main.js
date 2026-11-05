@@ -1,4 +1,4 @@
-// languages
+// languages to translate to/from, with their voice codes for TTS
 const LANGS = [
   { code: "en", name: "English",              voice: "en-US" },
   { code: "hi", name: "Hindi",                voice: "hi-IN" },
