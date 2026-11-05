@@ -1,4 +1,4 @@
-
+// languages
 const LANGS = [
   { code: "en", name: "English",              voice: "en-US" },
   { code: "hi", name: "Hindi",                voice: "hi-IN" },
